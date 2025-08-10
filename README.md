@@ -67,7 +67,7 @@ example:
 ```
 
 ### 2.2 M
-| dim | recall               |
+|  M  | recall               |
 |-----|----------------------|
 | 4   | 0.29699999690055845  |
 | 8   | 0.5429999977350235   |
@@ -82,6 +82,31 @@ example:
 ```
 
 ### 2.3 ef_construction
+| dim | recall               |
+|-----|----------------------|
+| 20  | 0.6600000023841858   |
+| 40  | 0.7569999992847443   |
+| 60  | 0.7679999887943267   |
+| 80  | 0.778000009059906    |
+| 100 | 0.777999997138977    |
+| 120 | 0.7939999997615814   |
+| 140 | 0.7850000023841858   |
+| 160 | 0.7950000047683716   |
+| 180 | 0.7980000019073487   |
+| 200 | 0.779999989271164    |
+
+```
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=20 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=40 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=60 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=80 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=100 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=120 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=140 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=160 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=180 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=5000 --searchk=100 --sample=10 --path=./prepare
+```
 
 ### 2.4 normalize
 
