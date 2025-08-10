@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package vbenchmark;
+
+message Key {
+  int64 id = 1;
+}
+
+message Value {
+  repeated float data = 1;
+  float length = 2;
+}
+
+
