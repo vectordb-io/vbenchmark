@@ -109,6 +109,26 @@ example:
 ```
 
 ### 2.4 normalize
+| normalize | recall               |
+|-----------|----------------------|
+| no        | 0.7990000069141387   |
+| yes       | 0.8019999921321869   |
+
+```
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=128 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=5000 --searchk=100 --sample=10 --path=./prepare --normalize
+```
+
+
+| normalize | recall               |
+|-----------|----------------------|
+| no        | 0.5769999951124192   |
+| yes       | 0.5550000101327897   |
+
+```
+./output/main/vbenchmark pr --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=5000 --searchk=100 --sample=10 --path=./prepare
+./output/main/vbenchmark pr --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=5000 --searchk=100 --sample=10 --path=./prepare --normalize
+```
 
 
 ## 3.GPU Accelerate
