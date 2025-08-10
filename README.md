@@ -1,4 +1,48 @@
 
+## 用法
+```
+./vbenchmark help
+description
+Usage:
+  name [OPTION...]
+
+      --version              print version
+      --normalize            normalize vectors
+      --length               output vector length
+      --path arg             file/dir (default: "")
+      --otype arg            stdout/file/leveldb/rocksdb (default: "")
+      --itype arg            leveldb/rocksdb (default: "")
+      --btype arg            leveldb/rocksdb/file/generate (default: "")
+      --etype arg            hnswlib/faiss (default: "")
+      --dtype arg            l2/inner (default: "")
+      --stype arg            hnsw/brute (default: "")
+      --Mvalue arg           M value (default: 0)
+      --ef_construction arg  ef_construction (default: 0)
+      --dim arg              dimension (default: 0)
+      --count arg            vector count (default: 0)
+      --limit arg            read limit (default: 999999999)
+      --searchk arg          search k nearest neighbors (default: 0)
+      --sample arg           sample count (default: 0)
+
+
+example: 
+./vbenchmark write --otype=stdout --dim=8 --length --count=100 --normalize
+./vbenchmark write --otype=file --dim=8 --length --count=100 --normalize
+./vbenchmark write --otype=leveldb --dim=8 --count 100 --normalize
+./vbenchmark write --otype=rocksdb --dim=8 --count 100 --normalize
+./vbenchmark read --itype=leveldb --path=ldb --limit=10
+./vbenchmark read --itype=rocksdb --path=rdb --limit=10
+./vbenchmark build --btype=generate --dim=1024 --normalize --etype=hnswlib --dtype=inner --stype=hnsw --Mvalue=16 --ef_construction=200  --count=1000
+./vbenchmark query --path=./hnswlib.dim_1024.cnt_1000.ts_1754740321381 --dim=1024 --etype=hnswlib --dtype=inner --stype=hnsw --Mvalue=16 --ef_construction=200 --count=1000
+./vbenchmark prepare --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=10000
+./vbenchmark recall --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --sample=10 --count=10000 --searchk=500 --path=./prepare.dim_1024.cnt_10000.ts_1754799214767/
+./vbenchmarkpr --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=10000 --searchk=500 --sample=10 --path=./prepare
+```
+
+## 召回率测试
+
+
+
 ## gpu 加速对比
 ```
 python diff.py 
