@@ -1,5 +1,5 @@
 
-## 用法
+## 1.Usage
 ```
 ./vbenchmark help
 description
@@ -36,16 +36,22 @@ example:
 ./vbenchmark query --path=./hnswlib.dim_1024.cnt_1000.ts_1754740321381 --dim=1024 --etype=hnswlib --dtype=inner --stype=hnsw --Mvalue=16 --ef_construction=200 --count=1000
 ./vbenchmark prepare --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=10000
 ./vbenchmark recall --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --sample=10 --count=10000 --searchk=500 --path=./prepare.dim_1024.cnt_10000.ts_1754799214767/
-./vbenchmarkpr --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=10000 --searchk=500 --sample=10 --path=./prepare
+./vbenchmark pr --dim=1024 --etype=hnswlib --dtype=inner --Mvalue=16 --ef_construction=200 --count=10000 --searchk=500 --sample=10 --path=./prepare
 ```
 
-## 召回率测试
+## 2.Recall Test
+
+### 2.1 dim
+
+### 2.2 M
+
+### 2.3 ef_construction
+
+### 2.4 normalize
 
 
-
-## gpu 加速对比
+## 3.GPU Accelerate
 ```
-python diff.py 
 生成随机向量数据...
 
 === CPU索引 ===
